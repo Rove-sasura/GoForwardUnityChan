@@ -34,17 +34,12 @@ public class CubeController : MonoBehaviour
     }
 
 
-    //private void OnCollisionEnter(Collision collision)
-    //{
-    //    if (Collision.gameObject.tag == "UnityChan")
-    //    {
-    //        GetComponent<AudioSource>().Play();
-    //    }
-    //}
-
-    //private void OnCollisionExit(Collision collision)
-    //{
-    //    GetComponent<AudioSource>().volume = (collision.gameObject.tag == UnityChan) ? 0 : 1;
-    //}
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.tag == "Cube" || other.gameObject.tag == "Ground")
+        {
+            GetComponent<AudioSource>().Play();
+        }
+    }
 
 }
